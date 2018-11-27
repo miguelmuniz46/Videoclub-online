@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" data-th-href="@{/home}">Videoclub online</a>
+</nav>
+    
+<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a style="text-decoration:none" data-th-href="@{/home}"><img class="img-fluid" src="https://icon-icons.com/icons2/936/PNG/32/home_icon-icons.com_73532.png"></a></li>
+</ol>
+
+<div class="container-fluid">
+    <h3>New movie:</h3><br>
+    <div class="row">
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" style="background-color: white";>
+                <form class="form-horizontal" role="form" id="formulario" data-th-action="@{/insert}" method="post">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2"><strong>Name:</strong></label>
+                        <div class="col-sm-10"><input type="text" class="form-control" name="name" id="txt1" placeholder="Name"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="control-label col-sm-2"><strong>Year:</strong></label>
+                        <div class="col-sm-10"><input type="text" class="form-control" name="year" id="txt2" placeholder="Year" pattern="[0-9]{4}"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="control-label col-sm-2"><strong>Director:</strong></label>
+                        <div class="col-sm-10"><input type="text" class="form-control" name="director" id="txt3" placeholder="Director"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="control-label col-sm-2"><strong>Actors:</strong></label>
+                        <div class="col-sm-10"><input type="text" class="form-control" name="actors" id="txt4" placeholder="Actors"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="control-label col-sm-2"><strong>URL YT:</strong></label>
+                        <div class="col-sm-10"><input type="text" class="form-control" name="url_Youtube" id="txt5" placeholder="URL"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="control-label col-sm-2"><strong>URL CO:</strong></label>
+                        <div class="col-sm-10"><input type="text" class="form-control" name="url_cover" id="txt6" placeholder="URL"></div>
+                    </div>
+                
+                    <img class="img-fluid" src="https://icon-icons.com/icons2/692/PNG/32/seo-social-web-network-internet_273_icon-icons.com_61489.png">
+                    <input style="text-decoration:none" type="submit" class="btn btn-link" value="Save">
+                </form>
+            </div>
+    </div>
+</div>
+    
+<nav class="navbar fixed-bottom navbar-light bg-dark" position="relative";>
+    <p class="col text-center text-white">&copy; Videoclub Online</p>
+</nav>
+</body>
+<script>
+    window.onload = function(){
+        var form = document.getElementById("formulario");
+        
+        form.addEventListener("submit", function(event){
+            var texto1 = document.getElementById("txt1");
+            var texto2 = document.getElementById("txt2");
+            var texto3 = document.getElementById("txt3");
+            var texto4 = document.getElementById("txt4");
+            var texto5 = document.getElementById("txt5");
+            var texto6 = document.getElementById("txt6");
+            
+            if(!texto1.value){
+                alert("Debe rellenar el campo del nombre");
+                texto1.focus();
+                return event.preventDefault();
+            }
+            else if(!texto2.value){
+                alert("Debe rellenar el campo del año");
+                texto2.focus();
+                return event.preventDefault();
+            }
+            else if(!texto3.value){
+                alert("Debe rellenar el campo del director");
+                texto3.focus();
+                return event.preventDefault();
+            }
+            else if(!texto4.value){
+                alert("Debe rellenar el campo de actores");
+                texto4.focus();
+                return event.preventDefault();
+            }
+            else if(!texto5.value){
+                alert("Debe rellenar el campo de URL de la pelicula");
+                texto5.focus();
+                return event.preventDefault();
+            }
+            else if(!texto6.value){
+                alert("Debe rellenar el campo de URL de la portada");
+                texto6.focus();
+                return event.preventDefault();
+            }
+        });
+    }
+</script>
+</html>

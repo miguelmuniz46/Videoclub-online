@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" data-th-href="@{/home}">Videoclub online</a>
+</nav>
+    
+<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a style="text-decoration:none" data-th-href="@{/home}"><img class="img-fluid" src="https://icon-icons.com/icons2/936/PNG/32/home_icon-icons.com_73532.png"></a></li>
+    <li class="breadcrumb-item"><a style="text-decoration:none" data-th-href="@{/buscar}"><img class="img-fluid" src="https://icon-icons.com/icons2/621/PNG/32/magnifier-tool-2_icon-icons.com_56920.png"></a></li>
+    <li class="breadcrumb-item active"><a data-th-text="${name}"></a></li>
+</ol>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-2 col-sm-3 col-md-4 col-lg-2" style="background-color: white";>
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#cover">1.- Cover</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="#name">2.- Name</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="#year">3.- Year</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="#director">4.- Director</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="#actors">5.- Actors</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="#movie">6.- Watch Movie</a>
+                </li>
+            </ul>
+        </div>
+        
+            <div class="col-xs-10 col-sm-9 col-md-8 col-lg-10" style="background-color: white";>
+                <h2>Movie:</h2><br>
+                <h4><a id="cover">Cover:</a></h4><br>
+                <img data-th-src="${url_cover}"><br><br>
+                
+                <h4><a id="name">Name: </a></h4>
+                <label data-th-text="${name}"></label><br><br>
+                
+                <h4><a id="year">Year:</a></h4>
+                <label data-th-text="${year}"></label><br><br>
+                
+                <h4><a id="director">Director:</a></h4>
+                <label data-th-text="${director}"></label><br><br>
+                
+                <h4><a id="actors">Actors:</a></h4>
+                <label data-th-text="${actors}"></label><br><br>
+                
+                <h4><a style="text-decoration:none" id="movie" data-th-href="@{/watch(id=${id})}">Watch movie</a></h4><br>
+                <br><br>
+            </div>
+    </div>
+</div>
+    
+<nav class="navbar fixed-bottom navbar-light bg-dark" position="relative";>
+    <p class="col text-center text-white">&copy; Videoclub Online</p>
+</nav>
+</body>
+</html>

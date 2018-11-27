@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="#">Videoclub online</a>
+</nav>
+    
+<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Login</a></li>
+</ol>
+
+<div class="container-fluid">
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-2" style="background-color: white";>
+            <h2>Login</h2>
+            <p data-th-if="${param.error}">Invalid credentials</p>
+    		<p data-th-if="${param.logout}">Logged out</p>
+            
+            <form role="form" data-th-action="@{/login}" method="post">
+                <div class="form-group">
+                    <label for="user">Usuario:</label>
+                    <input type="text" class="form-control" name="user" placeholder="Introduzca el usuario">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" name="password" placeholder="Introduzca el password">
+                </div>
+                <input type="submit" class="btn btn-default" value="Enviar">
+            </form>
+        </div>
+</div>
+    
+<nav class="navbar fixed-bottom navbar-light bg-dark" position="relative";>
+    <p class="col text-center text-white">&copy; Videoclub Online</p>
+</nav>
+</body>
+</html>

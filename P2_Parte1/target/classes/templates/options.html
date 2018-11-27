@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" data-th-href="@{/home}">Videoclub online</a>
+</nav>
+    
+<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a style="text-decoration:none" data-th-href="@{/home}"><img class="img-fluid" src="https://icon-icons.com/icons2/936/PNG/32/home_icon-icons.com_73532.png"></a></li>
+</ol>
+
+<div class="container-fluid">
+    <h3>Admin options:</h3><br>
+    <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-2" style="background-color: white";>
+                <div data-sec-authorize="hasRole('ROLE_ADMIN')">
+					<br><a style="text-decoration:none" data-th-href="@{/new}" class="btn btn-link" role="button"> <img class="img-fluid" src="https://icon-icons.com/icons2/907/PNG/32/pencil-writing-on-a-paper-sheet_icon-icons.com_70422.png"> New movie</a><br>
+					<br><a style="text-decoration:none" data-th-href="@{/modify}" class="btn btn-link" role="button"><img class="img-fluid" src="https://icon-icons.com/icons2/37/PNG/32/sinchronize_theapplication_thearrow_2888.png"> Modify movie</a><br>
+                    <br><a style="text-decoration:none" data-th-href="@{/delete}" class="btn btn-link" role="button"><img class="img-fluid" src="https://icon-icons.com/icons2/692/PNG/32/seo-social-web-network-internet_262_icon-icons.com_61518.png"> Delete movie</a>
+				</div>
+            </div>
+    </div>
+</div>
+    
+<nav class="navbar fixed-bottom navbar-light bg-dark" position="relative";>
+    <p class="col text-center text-white">&copy; Videoclub Online</p>
+</nav>
+</body>
+</html>
